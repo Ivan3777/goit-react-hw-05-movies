@@ -9,6 +9,7 @@ export const Cast = () => {
   useEffect(() => {
     getCast(movieId).then(res => setCast(res));
   }, [movieId]);
+
   if (!cast) {
     return;
   }
