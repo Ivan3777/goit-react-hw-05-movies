@@ -8,6 +8,7 @@ import {
 import { useEffect, useState } from 'react';
 import { getMovieById } from 'Services/Api';
 import { GoBackButton } from 'components/GoBack/GoBack';
+
 const baseUrl = 'https://image.tmdb.org/t/p/w500/';
 
 export const MoviesDetails = () => {

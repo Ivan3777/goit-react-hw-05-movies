@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #2196f3;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0;
+}
+
+.item {
+  font-size: xx-large;
+  color: black;
+}
+
+/* .item:active {
+    color: maroon;
+} */
+
+.item.active {
+	color: #3399ff;
+  }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getTrendingMovies } from 'Services/Api';
 import { MoviesList } from 'components/MoviesList/MoviesList';
+import css from './Home.module.css'
 
 export const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -11,7 +12,7 @@ export const Home = () => {
   }, []);
   return (
     <div>
-      <h2>Trending today</h2>
+      <h2 className={css.title}>TRENDING TODAY</h2>
       <MoviesList movies={movies} />
     </div>
   );
