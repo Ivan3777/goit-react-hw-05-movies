@@ -5,10 +5,10 @@ export const Nav = () => {
   return (
     <main>
       <ul className={css.header}>
-        <NavLink className="HeaderItem" to="/">
+        <NavLink className={css.headerItem.active} to="/">
           <li className={css.item}>Home</li>
         </NavLink>
-        <NavLink to="/movies">
+        <NavLink className={css.headerItem.active} to="/movies">
           <li className={css.item}>Movies</li>
         </NavLink>
       </ul>

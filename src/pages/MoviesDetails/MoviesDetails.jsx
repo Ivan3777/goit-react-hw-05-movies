@@ -33,9 +33,16 @@ export const MoviesDetails = () => {
       <GoBackButton onClick={handleGoBack} />
       <div>
         <h1>{movie.title}</h1>
-        <img src={`${baseUrl + movie.poster_path}`} alt={movie.title} />
-        <h2>Overview</h2>
-        <span>{movie.overview}</span>
+        <div>
+        <div>
+          <img src={`${baseUrl + movie.poster_path}`} alt={movie.title} />
+        </div>
+        <div>
+          <h2>Overview</h2>
+
+          <span>{movie.overview}</span>
+        </div>
+        </div>Ï
       </div>
       <Link to="cast" state={location.state}>
         Cast
