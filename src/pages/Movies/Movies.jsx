@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMoviesByQuery } from 'Services/Api';
 import { MoviesList } from 'components/MoviesList/MoviesList';
+import css from './Movies.module.css'
 
 export const Movies = () => {
   const [query, setQuery] = useState('');
@@ -25,7 +26,8 @@ export const Movies = () => {
   }, [query, searchParams]);
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+    <div className={css.form}>
+      <form className={css.searchForm} onSubmit={handleSubmit}>
         <input
           autoComplete="off"
           type="text"
@@ -33,9 +35,11 @@ export const Movies = () => {
           onChange={handleChange}
           value={query}
         />
-        <button type="submit">Search</button>
+        <button className={css.buttonSearch} type="submit">Search</button>
       </form>
-      <MoviesList movies={movies} />
     </div>
+    
+      <MoviesList movies={movies} />
+      </div>
   );
 };

@@ -42,7 +42,7 @@ export const MoviesDetails = () => {
 
           <span>{movie.overview}</span>
         </div>
-        </div>Ï
+        </div>
       </div>
       <Link to="cast" state={location.state}>
         Cast
