@@ -22,7 +22,7 @@ export const Cast = () => {
           <li key={actor.id}>
             <img
               key={actor.id}
-              src={`${baseUrl + actor.profile_path}`}
+              src={baseUrl + actor.profile_path}
               alt={actor.profile_path}
             />
             {actor.name}
