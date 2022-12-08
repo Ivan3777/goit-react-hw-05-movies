@@ -33,10 +33,10 @@ export const MoviesDetails = () => {
     <>
       <GoBackButton onClick={handleGoBack} />
       <div>
-        <h1>{movie.title}</h1>
+        <h1 className={css.titleMovie}>{movie.title}</h1>
         <div className={css.container}>
           <div>
-            <img src={`${baseUrl + movie.poster_path}`} alt={movie.title} />
+            <img className={css.imageMovies} src={`${baseUrl + movie.poster_path}`} alt={movie.title} />
           </div>
           <div className={css.overview}>
             <h2 className={css.title}>Overview</h2>

@@ -1,8 +1,13 @@
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 15px;
   gap: 20px;
+}
+
+.titleMovie {
+    display: flex;
+    justify-content: center;
 }
 
 .overview {
@@ -24,4 +29,10 @@
 
 .link:not(:last-child) {
   margin-right: 30px;
+}
+
+.imageMovies {
+    border-radius: 5px;
+    height: 625px;
+    width: 500px;
 }

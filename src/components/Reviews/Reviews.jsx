@@ -7,7 +7,7 @@ export const Reviews = () => {
   const { movieId } = useParams();
 
   useEffect(() => {
-    getReviews(movieId).then(res => setReviews(res));
+    getReviews(movieId).then(setReviews);
   }, [movieId]);
 
   if (!reviews) {
@@ -16,16 +16,15 @@ export const Reviews = () => {
 
   return (
     <div>
-      {<p>There is no reviews yet</p> || (
-        <ul>
-          {reviews.map(({ id, author, content }) => (
-            <li key={id}>
-              <p> Author: {author}</p>
-              <span>{content}</span>
+      <ul>
+        {<p>There is no reviews yet</p> ||
+          reviews.map(review => (
+            <li key={review.id}>
+              <p> Author: {review.author}</p>
+              <span>{review.content}</span>
             </li>
           ))}
-        </ul>
-      )}
+      </ul>
     </div>
   );
 };

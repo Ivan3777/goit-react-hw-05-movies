@@ -20,9 +20,9 @@ export const getMoviesByQuery = async query => {
   return res.data.results;
 };
 
-export const getCast = async id => {
+export const getCast = async movieId => {
   const res = await axios.get(
-    `movie/${id}/credits?api_key=${KEY}&language=en-US`
+    `movie/${movieId}/credits?api_key=${KEY}&language=en-US`
   );
   return res.data.cast;
 };
