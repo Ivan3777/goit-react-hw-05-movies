@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  gap: 20px;
+}
+
+.overview {
+  width: 900px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.link:not(:last-child) {
+  margin-right: 30px;
+}

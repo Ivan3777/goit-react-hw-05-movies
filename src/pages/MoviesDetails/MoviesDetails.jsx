@@ -8,6 +8,7 @@ import {
 import { useEffect, useState } from 'react';
 import { getMovieById } from 'Services/Api';
 import { GoBackButton } from 'components/GoBack/GoBack';
+import css from './MoviesDetails.module.css';
 
 const baseUrl = 'https://image.tmdb.org/t/p/w500/';
 
@@ -33,24 +34,24 @@ export const MoviesDetails = () => {
       <GoBackButton onClick={handleGoBack} />
       <div>
         <h1>{movie.title}</h1>
-        <div>
-        <div>
-          <img src={`${baseUrl + movie.poster_path}`} alt={movie.title} />
-        </div>
-        <div>
-          <h2>Overview</h2>
-
-          <span>{movie.overview}</span>
-        </div>
+        <div className={css.container}>
+          <div>
+            <img src={`${baseUrl + movie.poster_path}`} alt={movie.title} />
+          </div>
+          <div className={css.overview}>
+            <h2 className={css.title}>Overview</h2>
+            <span>{movie.overview}</span>
+          </div>
         </div>
       </div>
-      <Link to="cast" state={location.state}>
-        Cast
-      </Link>
-      <Link to="reviews" state={location.state}>
-        Reviews
-      </Link>
-
+      <div className={css.details}>
+        <Link className={css.link} to="cast" state={location.state}>
+          Cast
+        </Link>
+        <Link className={css.link} to="reviews" state={location.state}>
+          Reviews
+        </Link>
+      </div>
       <Outlet />
     </>
   );
