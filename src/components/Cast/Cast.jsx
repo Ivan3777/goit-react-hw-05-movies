@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getCast } from 'Services/Api';
+import css from './Cast.module.css'
 
 const baseUrl = 'https://image.tmdb.org/t/p/w200/';
 
@@ -17,7 +18,7 @@ export const Cast = () => {
   }
   return (
     <div>
-      <ul>
+      <ul className={css.actors}>
         {cast.map(actor => (
           <li key={actor.id}>
             <img
