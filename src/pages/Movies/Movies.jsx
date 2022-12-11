@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMoviesByQuery } from 'Services/Api';
 import { MoviesList } from 'components/MoviesList/MoviesList';
-import css from './Movies.module.css'
+import css from './Movies.module.css';
 
 export const Movies = () => {
   const [query, setQuery] = useState('');
@@ -18,28 +18,31 @@ export const Movies = () => {
   };
 
   useEffect(() => {
-    const params = searchParams.get('query');
+    const query = searchParams.get('query');
     if (!query) {
       return;
     }
-    getMoviesByQuery(params).then(res => setMovies(res));
-  }, [query, searchParams]);
+    getMoviesByQuery(query).then(setMovies);
+  }, [searchParams]);
   return (
     <div>
-    <div className={css.form}>
-      <form className={css.searchForm} onSubmit={handleSubmit}>
-        <input
-          autoComplete="off"
-          type="text"
-          name="movie"
-          onChange={handleChange}
-          value={query}
-        />
-        <button className={css.buttonSearch} type="submit">Search</button>
-      </form>
-    </div>
-    
-      <MoviesList movies={movies} />
+      <div className={css.form}>
+        <form className={css.searchForm} onSubmit={handleSubmit}>
+          <input
+            autoComplete="off"
+            type="text"
+            name="movie"
+            placeholder="Enter the movie..."
+            onChange={handleChange}
+            value={query}
+          />
+          <button className={css.buttonSearch} type="submit">
+            Search
+          </button>
+        </form>
       </div>
+
+      <MoviesList movies={movies} />
+    </div>
   );
 };
